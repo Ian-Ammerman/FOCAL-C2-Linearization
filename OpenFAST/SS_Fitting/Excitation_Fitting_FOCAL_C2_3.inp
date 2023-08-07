@@ -1,0 +1,16 @@
+%%---- SS Fitting Options ----%%
+C:\Umaine Google Sync\GitHub\FOCAL-OpenFast-C2_3\Wamit_Files\Fine Run\IEA-15-240-RWT-UMaineSemi     % Rad.FileName:  Wamit Files name and Location
+[1 1 1 1 1 1]           % Rad.DoF:        Degree of Freedom enabled
+7500                   % Rad.WaveTMax:      - Analysis time for incident wave calculations (sec) [unused when WaveMod=0] [determines WaveDOmega=2Pi/WaveTMax in the IFFT]
+0.01                     % Rad.dT:       Time step (should match FAST)
+0.99                    % Rad.Fit:       Fit required for the parametric model (max. recomended 0.99)
+1                       % Rad.ppmf:      Plot the parametric model fit (0 or 1)
+0                       % Rad.fmt:       Manual (1) or Automatic(0) order reduction (Only if method=4)
+75                   % Rad.maxiter:   maximum number of iterations for the Automatic method
+997.2                  % Rad.WtrDen     Water density (kg/m^3)
+9.80665                 % Rad.Grav     Gravitational acceleration (m/s^2)
+0                      % Rad.WaveDir     - Incident wave propagation heading direction (degrees) [unused when WaveMod=0]
+IEA-15-240-RWT-UMaineSemi				% Rad.OutFileName
+auto                    % Rad.tc
+0.025                   % Rad.frac
+150                     % Rad.ord

@@ -1,0 +1,9 @@
+
+Predictions were generated on 03-Aug-2023 at 09:50:29 using OpenFAST, compiled as a 64-bit application using single precision at commit v3.5.0
+ linked with  NWTC Subroutine Library; ElastoDyn; ServoDyn; HydroDyn; MAP++ (<1.20.10>, <May-17-2023>)
+
+Description from the FAST input file: Input file for CCT9 Campaign 2: Floating offshore wind turbine. Input files to be used in OpenFAST v3.5.0.
+
+Time	TTDspFA	TTDspSS	YawBrTAxp	YawBrTAyp	YawBrTAzp	TwrBsFxt	TwrBsFyt	TwrBsFzt	TwrBsMxt	TwrBsMyt	TwrBsMzt	PtfmSurge	PtfmSway	PtfmHeave	PtfmRoll	PtfmPitch	PtfmYaw	PtfmTAxi	PtfmTAyi	PtfmTAzi	PtfmRAxi	PtfmRAyi	PtfmRAzi	SStC1_zQ	SStC1_zQD	SStC1_Fzl	SStC2_zQ	SStC2_zQD	SStC2_Fzl	SStC3_zQ	SStC3_zQD	SStC3_Fzl	Wave1Elev	HydroFzi	HydroFyi	HydroFxi	HydroMyi	HydroMxi	HydroMzi	T[1]	T[2]	T[3]
+(s)	(m)	(m)	(m/s^2)	(m/s^2)	(m/s^2)	(kN)	(kN)	(kN)	(kN-m)	(kN-m)	(kN-m)	(m)	(m)	(m)	(deg)	(deg)	(deg)	(m/s^2)	(m/s^2)	(m/s^2)	(deg/s^2)	(deg/s^2)	(deg/s^2)	INVALID	INVALID	INVALID	INVALID	INVALID	INVALID	INVALID	INVALID	INVALID	(m)	(N)	(N)	(N)	(N-m)	(N-m)	(N-m)	[N]	[N]	[N]
+    0.0000	-1.916E-01	 2.660E-02	 9.294E-01	-2.762E-03	 1.750E-02	-1.263E+03	 1.054E+02	-1.537E+04	-1.292E+04	-1.052E+05	-4.148E+02	 3.190E+00	-2.000E+00	 1.440E-02	-3.600E-01	-3.065E-01	 2.080E-02	-8.425E-02	 4.085E-03	 2.476E-02	-1.642E-02	-1.793E-01	 5.044E-04	 0.000E+00	 0.000E+00	 0.000E+00	 0.000E+00	 0.000E+00	 0.000E+00	 0.000E+00	 0.000E+00	 0.000E+00	 0.000E+00	 1.966E+08	-1.016E+04	 4.474E+05	 3.858E+07	 1.625E+07	-1.724E+05	 3.330E+06	 3.081E+06	 3.180E+06
