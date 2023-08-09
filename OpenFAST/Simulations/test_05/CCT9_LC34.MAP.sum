@@ -1,0 +1,137 @@
+Outputs were generated using MAP++ 1.20.10.
+
+    Wednesday August 09-2023 at 15:22:49 PM
+
+    Gravity constant          [m/s^2]  : 9.81
+    Sea density               [kg/m^3] : 997.20
+    Water depth               [m]      : 350.00
+    Vessel reference position [m]      : 0.00 , 0.00 , 0.00
+
+    Cable Type          : A
+    Diameter     [m]    : 0.1000
+    Mass Density [kg/m] : 10.00
+    EA           [N]    : 32133192.00
+    omega        [N/m]  : 21.26
+    CB                  : 0.00
+
+    Cable Type          : B
+    Diameter     [m]    : 0.1000
+    Mass Density [kg/m] : 10.00
+    EA           [N]    : 35075301.00
+    omega        [N/m]  : 21.26
+    CB                  : 0.00
+
+    Cable Type          : C
+    Diameter     [m]    : 0.1000
+    Mass Density [kg/m] : 10.00
+    EA           [N]    : 43002320.00
+    omega        [N/m]  : 21.26
+    CB                  : 0.00
+
+          | Node 1 Data            Node 2 Data            Node 3 Data            Node 4 Data
+          | -------------------------------------------------------------------------------------------
+Type      |  FIX                    FIX                    FIX                    VESSEL
+X  [m]    |   179.800                180.100               -423.800                29.800
+Y  [m]    |  -293.500                321.900                13.100                -51.500
+Z  [m]    |  -14.000                -14.000                -12.600                -14.360
+M  [kg]   |  0.000                   0.000                  0.000                  0.000
+B  [m^3]  |  0.000                   0.000                  0.000                  0.000
+FX [N]    | ( 1986252.037)         ( 1486993.650)         (-2757882.365)         (-1986252.037)
+FY [N]    | (-3204486.620)         ( 2662801.874)         ( 99144.509)           ( 3204486.620)
+FZ [N]    | (-2058.153)            (-516.216)             (-9677.660)            ( 7475.858)
+
+
+          | Node 5 Data            Node 6 Data
+          | -------------------------------------------------------------------------------------------
+Type      |  VESSEL                 VESSEL
+X  [m]    |   29.100                -59.400
+Y  [m]    |   51.500                 0.000
+Z  [m]    |  -14.360                -14.360
+M  [kg]   |  0.000                   0.000
+B  [m^3]  |  0.000                   0.000
+FX [N]    | (-1486993.650)         ( 2757882.365)
+FY [N]    | (-2662801.874)         (-99144.509)
+FZ [N]    | ( 6574.087)            ( 16962.711)
+
+
+                | Line 1
+                | ---------------------------------------
+Material        |  A
+Lu        [m]   |  254.820
+Lb        [m]   | 0.000
+H         [N]   |  3770136.822
+V         [N]   |  7475.858
+T         [N]   |  3770144.234
+Alpha     [deg] |  0.114
+HAnch     [N]   |  3770136.822
+VAnch     [N]   |  2058.153
+TAnch     [N]   |  3770137.384
+AlphaAnch [deg] |  0.031
+L^2-Norm        |  7.162817e-11
+Function Evals  |  8
+Jacobian Evals  |  7
+Term. criteria  |  2 : ||x_i - x_{i-1}||  <= INNER_XTOL.
+
+
+                | Line 2
+                | ---------------------------------------
+Material        |  B
+Lu        [m]   |  284.930
+Lb        [m]   | 0.000
+H         [N]   |  3049862.937
+V         [N]   |  6574.087
+T         [N]   |  3049870.022
+Alpha     [deg] |  0.124
+HAnch     [N]   |  3049862.937
+VAnch     [N]   |  516.216
+TAnch     [N]   |  3049862.980
+AlphaAnch [deg] |  0.010
+L^2-Norm        |  4.311027e-11
+Function Evals  |  14
+Jacobian Evals  |  10
+Term. criteria  |  2 : ||x_i - x_{i-1}||  <= INNER_XTOL.
+
+
+                | Line 3
+                | ---------------------------------------
+Material        |  C
+Lu        [m]   |  342.650
+Lb        [m]   | 0.000
+H         [N]   |  2759663.888
+V         [N]   |  16962.711
+T         [N]   |  2759716.019
+Alpha     [deg] |  0.352
+HAnch     [N]   |  2759663.888
+VAnch     [N]   |  9677.660
+TAnch     [N]   |  2759680.857
+AlphaAnch [deg] |  0.201
+L^2-Norm        |  1.900912e-11
+Function Evals  |  13
+Jacobian Evals  |  9
+Term. criteria  |  2 : ||x_i - x_{i-1}||  <= INNER_XTOL.
+
+
+---------------------- LINE DICTIONARY ---------------------------------------
+LineType  Diam      MassDenInAir   EA            CB
+[-]       [m]       [kg/m]         [N]           [-]
+A            0.1        10         32133192     0       0      0    0    0 
+B            0.1        10         35075301     0       0      0    0    0 
+C            0.1        10         43002320     0       0      0    0    0 
+---------------------- NODE PROPERTIES ---------------------------------------
+Node  Type       X       Y       Z      M     B     FX    FY    FZ
+[-]   [-]       [m]     [m]     [m]    [kg]  [mˆ3]  [N]   [N]   [N]
+1    fix      179.8   -293.5     -14        0     0      0     0     0 
+2    fix      180.1    321.9     -14        0     0      0     0     0 
+3    fix     -423.8     13.1     -12.6      0     0      0     0     0 
+4    vessel    29.8    -51.5     -14.36     0     0      0     0     0 
+5    vessel    29.1     51.5     -14.36     0     0      0     0     0 
+6    vessel   -59.4      0.0     -14.36     0     0      0     0     0 
+---------------------- LINE PROPERTIES ---------------------------------------
+Line  LineType  UnstrLen  NodeAnch  NodeFair  Flags
+[-]      [-]       [m]       [-]       [-]       [-]
+1         A       254.82        1         4         TENSION_FAIR 
+2         B       284.93        2         5         TENSION_FAIR 
+3         C       342.65        3         6         TENSION_FAIR 
+---------------------- SOLVER OPTIONS-----------------------------------------
+Option 
+[-] 

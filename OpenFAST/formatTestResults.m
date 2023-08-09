@@ -9,8 +9,8 @@ home = 'C:\Umaine Google Sync\GitHub\FOCAL-C2-Linearization\OpenFAST';
 cd(home);
 
 %% --------------- USER INPUTS --------------- %%
-test_name = 'Irr4_s1_fixedTMD';
-simulation_name = 'Irr4_s1_fixed';
+test_name = 'test_05_fixed';
+simulation_name = 'test_05';
 
 %% Read in Test Data
 if contains(test_name,'fixed')
@@ -22,7 +22,7 @@ elseif contains(test_name,tower)
 end
 
 new_labels = {'Time','Wave1Elev','PtfmSurge','PtfmSway','PtfmHeave','PtfmRoll'...
-    ,'PtfmPitch','PtfmYaw','TwrBsMyi','TwHt2Alxt','TwHt1Alxt','T_1_','T_2_',...
+    ,'PtfmPitch','PtfmYaw','TwrBsFxt','TwrBsMyt','TwHt2Alxt','TwHt1Alxt','T_1_','T_2_',...
     'T_3_','SStC1_zQ','SStC2_zQ','SStC3_zQ'};
 
 load(sprintf('%s.mat',test_name));

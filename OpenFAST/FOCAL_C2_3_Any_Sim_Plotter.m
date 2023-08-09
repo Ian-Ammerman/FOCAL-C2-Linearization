@@ -6,7 +6,7 @@ cd(home_dir);
 
 % Define time offset if .ssexctn files used
 tc = struct();
-    tc.OpenFAST = 500;
+    tc.OpenFAST = 0;
     tc.Simulink = 529.975;
     tc.Experiment = 0;
 
@@ -14,14 +14,8 @@ tc = struct();
 % Comparison flag (1: OpenFAST | 2: Simulink | 3: Experimental)
 type = [1,3];
 plot_mark = {'none','none','none'};
-simulation = 'Irr4_s1_fixed';
-
-
-xrange = [0 800];
-
-% Names to compare
-files = {'Full_OpenFAST_Irr1_pitch';
-         'Baseline_Locked_JONSWAP_w_2nd_Order'};
+simulation = 'test_05';
+xrange = [0 750];
 
 % Descriptions
 desc = {'OpenFAST';
@@ -35,7 +29,7 @@ for i = 1:length(type)
     switch t
         case 1 % OpenFAST Non-Linear Simulation Results
             load('OpenFAST_Results.mat');
-            sim_results.Time = sim_results.Time-tc.OpenFAST;
+            sim_results.Time = sim_results.Time-tc.OpenFAST;            
             full_results{i} = sim_results;
             clear sim_results;
 
@@ -53,22 +47,36 @@ for i = 1:length(type)
     end
 end
 
+% % Interpolate OpenFAST results to original time values
+% fast = full_results{1};
+% test = full_results{2};
+% ttime = test.Time;
+% fastnames = fieldnames(fast);
+% for i = 2:length(fastnames);
+%     var = fast.(fastnames{i});
+%     var2 = interp1(fast.Time,var,ttime,'pchip');
+%     fast.(fastnames{i}) = var2;
+% end
+% 
+% full_results{1} = fast;
+% 
+% clear var var2
 
 % Variable to plot
 varnames = {'Wave Elevation [m]';
-            'Heave [m]';
-            'Pitch [deg]';
-            'Surge [m]'};
+            'Pitch';
+            'Surge';
+            'Line 3 Tension [N]'};
+
+gain = [10^3,1];
 
 for i = 1:length(type)
     time{i} = full_results{i}.Time;
     var1{i} = rMean(full_results{i}.Wave1Elev);
-    var2{i} = rMean(full_results{i}.PtfmHeave);
-    var3{i} = rMean(full_results{i}.PtfmPitch);
-    var4{i} = rMean(full_results{i}.SStC3_zQ);
+    var2{i} = rMean(full_results{i}.PtfmPitch);
+    var3{i} = rMean(full_results{i}.PtfmHeave);
+    var4{i} = rMean(full_results{i}.PtfmSurge);
 end
-
-mark_index = [1:125:length(time{1})];
 
 %% -------------- Do Plotting --------------- %%
 figure('Name','SS to Simulation Comparison')
@@ -83,22 +91,22 @@ for k = 1:num_plot
     switch k
         case 1
            for i = 1:length(type)
-               plot(time{i},var1{i},'DisplayName',desc{i},'Marker',plot_mark{i},'MarkerIndices',mark_index);
+               plot(time{i},var1{i},'DisplayName',desc{i});
            end
 
         case 2
             for i = 1:length(type)
-                plot(time{i},var2{i},'DisplayName',desc{i},'Marker',plot_mark{i},'MarkerIndices',mark_index);
+                plot(time{i},var2{i},'DisplayName',desc{i});
             end
 
         case 3
             for i = 1:length(type)
-                plot(time{i},var3{i},'DisplayName',desc{i},'Marker',plot_mark{i},'MarkerIndices',mark_index);
+                plot(time{i},var3{i},'DisplayName',desc{i});
             end
         
         case 4
             for i = 1:length(type)
-                plot(time{i},var4{i},'DisplayName',desc{i},'Marker',plot_mark{i},'MarkerIndices',mark_index);
+                plot(time{i},var4{i},'DisplayName',desc{i});
             end
     end
 

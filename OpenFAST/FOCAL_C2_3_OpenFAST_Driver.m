@@ -10,10 +10,13 @@ close all; clear all; clc;
 model_name = '0_Locked_Model';
 
 % TEST DESCRIPTION
-test_name = 'Irr4_s1_fixed';
+test_name = 'test_05';
 
 % WAVE CASE
-wave_file = 'Irr4_s1_fixed.Elev'
+wave_file = 'test_05.Elev'
+
+% WAVETMAX
+WaveTMax = 10001;
 
 %%% ------------ END USER INPUTS ------------ %%%
 
@@ -32,7 +35,7 @@ end
 %% Prepare Wave File
 cd('Wave_Files');
 wave = readmatrix(wave_file,'FileType','text','Delimiter','\t');
-index = dsearchn(wave(:,1),10001);
+index = dsearchn(wave(:,1),WaveTMax);
 wave = wave(1:index,:);
 writematrix(wave,'InputWave.Elev','FileType','text','Delimiter','\t');
 cd(home_dir);
@@ -53,11 +56,11 @@ end
 % Confirm simulation folder clear of old data
 cd(sim_folder)
 out_name = sprintf('%s.out',root_name);
-
-if isfile(out_name)
-    errordlg("Old output detected in simulation directory.",'Simulation Folder Error');
-    return
-end
+% 
+% if isfile(out_name)
+%     errordlg("Old output detected in simulation directory.",'Simulation Folder Error');
+%     return
+% end
 
 % Run OpenFAST
 cd(home_dir)

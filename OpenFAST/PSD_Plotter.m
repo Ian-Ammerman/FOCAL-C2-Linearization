@@ -4,15 +4,9 @@ close all; clear all; clc;
 home_dir = 'C:\Umaine Google Sync\GitHub\FOCAL-C2-Linearization\OpenFAST';
 cd(home_dir);
 
-% Define time offset if .ssexctn files used
-tc = struct();
-    tc.OpenFAST = 500;
-    tc.Simulink = 529.975;
-    tc.Experiment = 0;
-
 %% --------------- User Inputs ---------------- %%
 % Comparison flag (1: OpenFAST | 2: Simulink | 3: Experimental)
-type = [1,2,3];
+type = [1,3];
 plot_mark = {'none','none','none'};
 simulation = 'Irr4_s1_fixed';
 
@@ -20,7 +14,6 @@ xrange = [0.005 0.15];
 
 % Descriptions
 desc = {'OpenFAST';
-        'State Space';
         'Experiment'};
 
 
@@ -49,16 +42,16 @@ end
 
 % Variable to plot
 varnames = {'Wave Elevation [m]';
-            'Heave [m]';
-            'Pitch [deg]';
-            'Surge [m]'};
-
+            'Line 1 Tension';
+            'Line 2 Tension';
+            'Line 3 Tension'};
+gain = [10^6,1];
 for i = 1:length(type)
     Freq{i} = full_results{i}.Frequency;
     var1{i} = rMean(full_results{i}.Wave1Elev);
-    var2{i} = rMean(full_results{i}.PtfmHeave);
-    var3{i} = rMean(full_results{i}.PtfmPitch);
-    var4{i} = rMean(full_results{i}.PtfmSurge);
+    var2{i} = rMean(full_results{i}.T_1_);
+    var3{i} = rMean(full_results{i}.T_2_);
+    var4{i} = rMean(full_results{i}.T_3_);
 end
 
 %% -------------- Do Plotting --------------- %%

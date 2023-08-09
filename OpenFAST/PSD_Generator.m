@@ -7,13 +7,14 @@ test = 'Irr4_s1_fixed';
 
 cd(sprintf('C:\Umaine Google Sync\GitHub\FOCAL-C2-Linearization\OpenFAST\Simulations/%s',test));
 %% Evaluate and Store PSDs
-nsmooth = 0;
-tstop = 20001;
+nsmooth = 5;
+time_end = 10000;
 % Evaluate OpenFAST PSDs
-if exist('OpenFAST_Results.mat','file') && ~exist('OpenFAST_PSD.mat','file')
+if exist('OpenFAST_Results.mat','file')
     load('OpenFAST_Results.mat');
     fields = fieldnames(sim_results);
     time = sim_results.Time;
+    tstop = dsearchn(time,time_end);
     Fs = length(time)/max(time);
     PSD_vals = [];
     FAST_Freq = [];
@@ -39,10 +40,11 @@ if exist('OpenFAST_Results.mat','file') && ~exist('OpenFAST_PSD.mat','file')
 end
 
 % Evaluate Simulink PSDs
-if exist('Simulink_Results.mat','file') && ~exist('Simulink_PSD.mat','file')
+if exist('Simulink_Results.mat','file')
     load('Simulink_Results.mat');
     fields = fieldnames(slx_results);
     time = slx_results.Time;
+    tstop = dsearchn(time,time_end);
     Fs = length(time)/max(time);
     PSD_vals = [];
     sim_Freq = [];
@@ -68,10 +70,11 @@ if exist('Simulink_Results.mat','file') && ~exist('Simulink_PSD.mat','file')
 end
 
 % Evaluate Experiment PSDs
-if exist('Test_Results.mat','file') && ~exist('Test_PSD.mat','file')
+if exist('Test_Results.mat','file')
     load('Test_Results.mat');
     fields = fieldnames(test_results);
     time = test_results.Time;
+    tstop = dsearchn(time,time_end);
     Fs = length(time)/max(time);
     PSD_vals = [];
     test_Freq = [];

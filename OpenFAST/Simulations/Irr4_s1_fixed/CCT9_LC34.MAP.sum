@@ -1,6 +1,6 @@
 Outputs were generated using MAP++ 1.20.10.
 
-    Monday August 07-2023 at 11:51:53 AM
+    Wednesday August 09-2023 at 13:32:02 PM
 
     Gravity constant          [m/s^2]  : 9.81
     Sea density               [kg/m^3] : 997.20
@@ -129,9 +129,9 @@ Node  Type       X       Y       Z      M     B     FX    FY    FZ
 ---------------------- LINE PROPERTIES ---------------------------------------
 Line  LineType  UnstrLen  NodeAnch  NodeFair  Flags
 [-]      [-]       [m]       [-]       [-]       [-]
-1         A       254.82        1         4 
-2         B       284.93        2         5 
-3         C       342.65        3         6 
+1         A       254.82        1         4         TENSION_FAIR 
+2         B       284.93        2         5         TENSION_FAIR 
+3         C       342.65        3         6         TENSION_FAIR 
 ---------------------- SOLVER OPTIONS-----------------------------------------
 Option 
 [-] 
