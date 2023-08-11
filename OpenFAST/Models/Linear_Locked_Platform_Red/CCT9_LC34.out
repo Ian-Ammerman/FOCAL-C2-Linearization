@@ -1,0 +1,9 @@
+
+Predictions were generated on 10-Aug-2023 at 12:06:16 using OpenFAST, compiled as a 64-bit application using single precision at commit v3.5.0
+ linked with  NWTC Subroutine Library; ElastoDyn; ServoDyn; HydroDyn; MAP++ (<1.20.10>, <May-17-2023>)
+
+Description from the FAST input file: Input file for CCT9 Campaign 2: Floating offshore wind turbine. Input files to be used in OpenFAST v3.5.0.
+
+Time	TTDspFA	TTDspSS	PtfmSurge	PtfmSway	PtfmHeave	PtfmRoll	PtfmPitch	PtfmYaw	T[1]	T[2]	T[3]
+(s)	(m)	(m)	(m)	(m)	(m)	(deg)	(deg)	(deg)	[N]	[N]	[N]
+    0.0000	 0.000E+00	 0.000E+00	 0.000E+00	 0.000E+00	 0.000E+00	 0.000E+00	 0.000E+00	 0.000E+00	 3.770E+06	 3.050E+06	 2.760E+06

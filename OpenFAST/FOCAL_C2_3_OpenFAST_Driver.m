@@ -10,10 +10,10 @@ close all; clear all; clc;
 model_name = '0_Locked_Model';
 
 % TEST DESCRIPTION
-test_name = 'test_05';
+test_name = 'test_01';
 
 % WAVE CASE
-wave_file = 'test_05.Elev'
+wave_file = 'test_01.Elev'
 
 % WAVETMAX
 WaveTMax = 10001;
@@ -34,7 +34,7 @@ end
 
 %% Prepare Wave File
 cd('Wave_Files');
-wave = readmatrix(wave_file,'FileType','text','Delimiter','\t');
+wave = readmatrix(wave_file,'FileType','text');
 index = dsearchn(wave(:,1),WaveTMax);
 wave = wave(1:index,:);
 writematrix(wave,'InputWave.Elev','FileType','text','Delimiter','\t');

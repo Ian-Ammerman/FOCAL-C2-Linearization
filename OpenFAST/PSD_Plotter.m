@@ -8,7 +8,7 @@ cd(home_dir);
 % Comparison flag (1: OpenFAST | 2: Simulink | 3: Experimental)
 type = [1,3];
 plot_mark = {'none','none','none'};
-simulation = 'Irr4_s1_fixed';
+simulation = 'test_01';
 
 xrange = [0.005 0.15];
 
@@ -49,9 +49,9 @@ gain = [10^6,1];
 for i = 1:length(type)
     Freq{i} = full_results{i}.Frequency;
     var1{i} = rMean(full_results{i}.Wave1Elev);
-    var2{i} = rMean(full_results{i}.T_1_);
-    var3{i} = rMean(full_results{i}.T_2_);
-    var4{i} = rMean(full_results{i}.T_3_);
+    var2{i} = rMean(full_results{i}.PtfmPitch);
+    var3{i} = rMean(full_results{i}.PtfmHeave);
+    var4{i} = rMean(full_results{i}.PtfmSurge);
 end
 
 %% -------------- Do Plotting --------------- %%

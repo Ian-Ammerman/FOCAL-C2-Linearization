@@ -32,14 +32,14 @@ True          PtfmYDOF    - Platform yaw rotation DOF (flag)
           0   Azimuth     - Initial azimuth angle for blade 1 (degrees)
           0   RotSpeed    - Initial or fixed rotor speed (rpm)
           0   NacYaw      - Initial or fixed nacelle-yaw angle (degrees)
-          -0.19155   TTDspFA     - Initial fore-aft tower-top displacement (meters)
-          0.0266   TTDspSS     - Initial side-to-side tower-top displacement (meters)
-          3.19   PtfmSurge   - Initial or fixed horizontal surge translational displacement of platform (meters). R. Bergua: Surge free-decay: 9.06+3.19 = 12.25 m because the equilibrium is at +3.19 m. 
-          -2   PtfmSway    - Initial or fixed horizontal sway translational displacement of platform (meters)
-          0.0144   PtfmHeave   - Initial or fixed vertical heave translational displacement of platform (meters). R. Bergua: Heave free-decay: -2.00+0.02 = -1.98 m because the equilibrium is at +0.02 m. 
-          -0.36   PtfmRoll    - Initial or fixed roll tilt rotational displacement of platform (degrees)
-          -0.3065   PtfmPitch   - Initial or fixed pitch tilt rotational displacement of platform (degrees). R. Bergua: Pitch free-decay: -3.16+(-0.21)= -3.37 deg because the equilibrium is at -0.21 deg. 
-          0.0208   PtfmYaw     - Initial or fixed yaw rotational displacement of platform (degrees)
+          0   TTDspFA     - Initial fore-aft tower-top displacement (meters)
+          0   TTDspSS     - Initial side-to-side tower-top displacement (meters)
+          0   PtfmSurge   - Initial or fixed horizontal surge translational displacement of platform (meters). R. Bergua: Surge free-decay: 9.06+3.19 = 12.25 m because the equilibrium is at +3.19 m. 
+          0  PtfmSway    - Initial or fixed horizontal sway translational displacement of platform (meters)
+          0   PtfmHeave   - Initial or fixed vertical heave translational displacement of platform (meters). R. Bergua: Heave free-decay: -2.00+0.02 = -1.98 m because the equilibrium is at +0.02 m. 
+          0   PtfmRoll    - Initial or fixed roll tilt rotational displacement of platform (degrees)
+          0   PtfmPitch   - Initial or fixed pitch tilt rotational displacement of platform (degrees). R. Bergua: Pitch free-decay: -3.16+(-0.21)= -3.37 deg because the equilibrium is at -0.21 deg. 
+          0   PtfmYaw     - Initial or fixed yaw rotational displacement of platform (degrees)
 ---------------------- TURBINE CONFIGURATION -----------------------------------
           3   NumBl       - Number of blades (-)
        1E-2   TipRad      - The distance from the rotor apex to the blade tip (meters)

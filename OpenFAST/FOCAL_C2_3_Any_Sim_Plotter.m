@@ -6,7 +6,7 @@ cd(home_dir);
 
 % Define time offset if .ssexctn files used
 tc = struct();
-    tc.OpenFAST = 0;
+    tc.OpenFAST = 500;
     tc.Simulink = 529.975;
     tc.Experiment = 0;
 
@@ -14,8 +14,8 @@ tc = struct();
 % Comparison flag (1: OpenFAST | 2: Simulink | 3: Experimental)
 type = [1,3];
 plot_mark = {'none','none','none'};
-simulation = 'test_05';
-xrange = [0 750];
+simulation = 'test_01';
+xrange = [0 1000];
 
 % Descriptions
 desc = {'OpenFAST';
@@ -47,32 +47,25 @@ for i = 1:length(type)
     end
 end
 
-% % Interpolate OpenFAST results to original time values
-% fast = full_results{1};
-% test = full_results{2};
-% ttime = test.Time;
-% fastnames = fieldnames(fast);
-% for i = 2:length(fastnames);
-%     var = fast.(fastnames{i});
-%     var2 = interp1(fast.Time,var,ttime,'pchip');
-%     fast.(fastnames{i}) = var2;
-% end
-% 
-% full_results{1} = fast;
-% 
-% clear var var2
+% % Scale the experimental results
+% exp_res = full_results{2};
+% t = exp_res.Time;
+% tmax_old = max(t);
+% tmax_new = tmax_old*1;
+% dt = max(t)/length(t);
+% tnew = linspace(0,tmax_new,length(t))';
+% exp_res.Time = tnew;
+% full_results{2} = exp_res;
 
 % Variable to plot
 varnames = {'Wave Elevation [m]';
             'Pitch';
-            'Surge';
-            'Line 3 Tension [N]'};
-
-gain = [10^3,1];
+            'Heave';
+            'Surge'};
 
 for i = 1:length(type)
     time{i} = full_results{i}.Time;
-    var1{i} = rMean(full_results{i}.Wave1Elev);
+    var1{i} = rMean(full_results{i}.PtfmRoll);
     var2{i} = rMean(full_results{i}.PtfmPitch);
     var3{i} = rMean(full_results{i}.PtfmHeave);
     var4{i} = rMean(full_results{i}.PtfmSurge);

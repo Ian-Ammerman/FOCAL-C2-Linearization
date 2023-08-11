@@ -2,11 +2,20 @@
 close all; clear all; clc;
 
 %% ---------- Load in Experimental Data ---------- %%
-load('Reg1_fixedTMD.mat');
+load('Irr4_s1_fixedTMD.mat');
 
 time = channels(:,1);
 eta = channels(:,2);
 heave = channels(:,5);
+
+% Scale the experimental results
+
+t = time;
+tmax_old = max(t);
+tmax_new = tmax_old*1.02;
+dt = max(t)/length(t);
+tnew = linspace(0,tmax_new,length(t))';
+time = tnew;
 
 %% ---------- Load in Simulated Data ---------- %%
 % load('OpenFAST_Results.mat');
@@ -14,7 +23,7 @@ heave = channels(:,5);
 % eta = sim_results.Wave1Elev;
 % heave = sim_results.PtfmHeave;
 
-nsmooth = 25;
+nsmooth = 5;
 
 %% --------- Prepare Data for FFT ---------- %%
 Data{1} = heave;
@@ -69,7 +78,10 @@ yline(mean(imag(Combined{2})))
 xline(mean(real(Combined{2})))
 
 figure
-plot(f1,F)
+plot(f1,F);
+xlim([0,0.5]);
+xlabel('Frequency [Hz]')
+ylabel('FFT Heave')
 
 
 

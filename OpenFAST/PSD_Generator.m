@@ -3,7 +3,7 @@
 clear all; close all; clc;
 
 %% --------------- USER INPUTS --------------- %%
-test = 'Irr4_s1_fixed';
+test = 'test_01';
 
 cd(sprintf('C:\Umaine Google Sync\GitHub\FOCAL-C2-Linearization\OpenFAST\Simulations/%s',test));
 %% Evaluate and Store PSDs
