@@ -7,13 +7,13 @@ close all; clear all; clc;
 %%% -------------- USER INPUTS -------------- %%%
 
 % MODEL
-model_name = '0_Locked_Model';
+model_name = 'DT1_Locked_Platform';
 
 % TEST DESCRIPTION
-test_name = 'test_01';
+test_name = '0_DT1_Locked_Platform';
 
 % WAVE CASE
-wave_file = 'test_01.Elev'
+wave_file = 'Test_01_fixed.Elev'
 
 % WAVETMAX
 WaveTMax = 10001;
@@ -22,7 +22,7 @@ WaveTMax = 10001;
 
 %% ----------- MODEL DEFINITIONS ----------- %%
 % Model Inputs (Should remain constant for same system)
-root_name = 'CCT9_LC34';
+root_name = 'DT1';
 home_dir = 'C:\Umaine Google Sync\GitHub\FOCAL-C2-Linearization\OpenFAST';
 
 % Check if in home directory and go there if not

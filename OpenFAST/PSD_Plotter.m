@@ -5,16 +5,17 @@ home_dir = 'C:\Umaine Google Sync\GitHub\FOCAL-C2-Linearization\OpenFAST';
 cd(home_dir);
 
 %% --------------- User Inputs ---------------- %%
-% Comparison flag (1: OpenFAST | 2: Simulink | 3: Experimental)
-type = [1,3];
+% Comparison flag (1: OpenFAST | 2: Simulink | 3: Experimental | 4: Observer)
+type = [2,3,4];
 plot_mark = {'none','none','none'};
 simulation = 'test_01';
 
-xrange = [0.005 0.15];
+xrange = [0.04 0.2];
 
 % Descriptions
-desc = {'OpenFAST';
-        'Experiment'};
+desc = {'State-Space'
+        'Experiment';
+        'Observer'};
 
 
 cd(sprintf('Simulations/%s',simulation));
@@ -34,33 +35,40 @@ for i = 1:length(type)
 
         case 3 % Experimental Results
             load('Test_PSD.mat')
+            Test_PSD = renameStructField(Test_PSD,'T_3_','FAIRTEN3');
+            Test_PSD = renameStructField(Test_PSD,'T_2_','FAIRTEN2');
+            Test_PSD = renameStructField(Test_PSD,'T_1_','FAIRTEN1');
             full_results{i} = Test_PSD;
             clear test_results
+
+        case 4 % Load observer results
+            load('Observer_PSD.mat');
+            full_results{i} = Observer_PSD;
     end
 end
 
 
 % Variable to plot
-varnames = {'Wave Elevation [m]';
-            'Line 1 Tension';
-            'Line 2 Tension';
-            'Line 3 Tension'};
-gain = [10^6,1];
+varnames = {'Roll';
+            'Pitch';
+            'Tower Base Pitch Moment';
+            'Surge'};
+
 for i = 1:length(type)
     Freq{i} = full_results{i}.Frequency;
-    var1{i} = rMean(full_results{i}.Wave1Elev);
+    var1{i} = rMean(full_results{i}.PtfmRoll);
     var2{i} = rMean(full_results{i}.PtfmPitch);
-    var3{i} = rMean(full_results{i}.PtfmHeave);
-    var4{i} = rMean(full_results{i}.PtfmSurge);
+    var3{i} = rMean(full_results{i}.TwrBsMyt);
+%     var4{i} = rMean(full_results{i}.PtfmSurge);
 end
 
 %% -------------- Do Plotting --------------- %%
 figure('Name','SS to Simulation Comparison')
-num_plot = 4;
+num_plot = 3;
 for k = 1:num_plot
     subplot(num_plot,1,k)
     ax = gca; box on; hold on;
-    xlabel('Time [s]')
+    xlabel('Frequency [Hz]')
     xlim(xrange);
     title(varnames{k})
 

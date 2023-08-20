@@ -106,12 +106,9 @@ True                   TabDelim    - Use tab delimiters in text tabular output f
 OutList      - The next line(s) contains a list of output parameters.  
 "SStC1_zQ"              - Substructure Control (TMD1 in CCT9 project. Location: Downwind, -Y). z-displacement [m] relative to rest position in StC reference frame. 
 "SStC1_zQD"             - Substructure Control. z-velocity [m/s] in structural control reference frame.
-"SStC1_Fzl"             - Substructure Control. Resulting force [kN] in Z direction in inertial (global) coordinates.
 "SStC2_zQ"              - Substructure Control (TMD2 in CCT9 project. Location: Downwind, +Y). z-displacement [m] relative to rest position in StC reference frame. 
 "SStC2_zQD"             - Substructure Control. z-velocity [m/s] in structural control reference frame.
-"SStC2_Fzl"             - Substructure Control. Resulting force [kN] in Z direction in inertial (global) coordinates.
 "SStC3_zQ"              - Substructure Control (TMD3 in CCT9 project. Location: Upwind). z-displacement [m] relative to rest position in StC reference frame. 
 "SStC3_zQD"             - Substructure Control. z-velocity [m/s] in structural control reference frame.
-"SStC3_Fzl"             - Substructure Control. Resulting force [kN] in Z direction in inertial (global) coordinates.
 END of input file (the word "END" must appear in the first 3 columns of this last Out_List line)
 ---------------------------------------------------------------------------------------
