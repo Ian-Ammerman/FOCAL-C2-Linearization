@@ -1,9 +1,0 @@
-
-Predictions were generated on 16-Aug-2023 at 10:55:41 using OpenFAST, compiled as a 64-bit application using single precision at commit v3.5.0
- linked with  NWTC Subroutine Library; ElastoDyn; ServoDyn; HydroDyn; MoorDyn (v2.0.0, 2022-12-08)
-
-Description from the FAST input file: Generated with AeroElasticSE FAST driver
-
-Time	PtfmRoll	PtfmPitch	TwrBsMyt	TwrBsMxt	SStC1_zQ	SStC2_zQ	SStC3_zQ	FAIRTEN1	FAIRTEN2	FAIRTEN3
-(s)	(deg)	(deg)	(kN-m)	(kN-m)	(m)	(m)	(m)	(N)	(N)	(N)
-    0.0000	 0.000E+00	 0.000E+00	-1.197E+04	 5.274E+01	 0.000E+00	 0.000E+00	 0.000E+00	 3.770E+06	 3.050E+06	 2.760E+06

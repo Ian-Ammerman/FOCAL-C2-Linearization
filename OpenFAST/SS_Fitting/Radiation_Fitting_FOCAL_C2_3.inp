@@ -1,9 +1,0 @@
-%%---- SS Fitting Options ----%%
-C:\Umaine Google Sync\GitHub\FOCAL-OpenFast-C2_3\Wamit_Files\Fine Run\IEA-15-240-RWT-UMaineSemi    % Rad.FileName:  Wamit Files name and Location
-[1 1 1 1 1 1]           % gp.DoF:        Degree of Freedom enabled
-[0.0 5]               % Rad.twr:       Typical local frequencies range (rad/s)
-1                       % Rad.wwf:       Frequencies weighting factors
-2                       % Rad.tfi:       Indentification Method: 1-Freq Ident; 2- FDI; 3- TD-Ls; 4-TD-Realization.
-0.99                    % Rad.fit:       Fit required for the parametric model (max. recomended 0.99)
-1                       % Rad.ppmf:      Plot the parametric model fit (0 or 1)
-0                       % Rad.fmt:       Manual (1) or Automatic(0) order reduction (Only if method=4)
